@@ -1,0 +1,70 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+}
+
+android {
+    namespace 'com.example.myapplication'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.example.myapplication"
+        minSdk 24
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+        dataBinding true
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.appcompat:appcompat:1.6.0'
+    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    implementation 'com.github.lecho:hellocharts-library:1.5.8@aar'
+    implementation 'com.github.yogacp:android-viewbinding:1.0.4'
+
+    implementation("io.coil-kt:coil:2.2.2")
+    implementation 'com.google.android.material:material:1.9.0-alpha01'
+
+    implementation 'com.google.android.gms:play-services-maps:18.1.0'
+
+    implementation "com.kongzue.dialogx:DialogX:${dialogx_version}"
+    implementation 'com.afollestad.material-dialogs:input:3.3.0'
+    implementation 'com.guolindev.permissionx:permissionx:1.7.1'
+    implementation 'com.github.GrenderG:Toasty:1.5.2'
+    
+    implementation "androidx.fragment:fragment:1.5.5"
+
+    //maps
+    implementation 'com.google.android.gms:play-services-location:21.0.1'
+    implementation "com.google.android.gms:play-services-maps:18.1.0"
+
+    //graph
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+}

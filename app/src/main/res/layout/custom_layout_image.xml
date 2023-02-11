@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+
+        <variable
+            name="clickImage"
+            type="com.example.myapplication.ui.activity.ImageAdapter.OnItemClickListener" />
+
+        <variable
+            name="fileImage"
+            type="java.io.File" />
+    </data>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingHorizontal="8dp">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
+        android:scaleType="centerCrop"
+        loadImageFile="@{fileImage}"
+        app:shapeAppearance="@style/ShapeAppearanceOverlayRadius"
+        tools:src="@tools:sample/backgrounds/scenic"/>
+    <com.google.android.material.imageview.ShapeableImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="top|end"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="2dp"
+        android:background="@color/white"
+        android:onClick="@{()->clickImage.removeImage(fileImage)}"
+        android:elevation="5dp"
+        android:scaleType="center"
+        app:shapeAppearance="@style/ShapeAppearanceOverlayRound"
+        app:srcCompat="@drawable/ic_close" />
+
+</FrameLayout>
+
+</layout>
