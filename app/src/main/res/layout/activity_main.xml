@@ -39,27 +39,20 @@
             android:text="@string/dashboard"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="@id/cardView1"/>
+            app:layout_constraintBottom_toBottomOf="@id/IconProfile"/>
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView1"
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/IconProfile"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            app:cardCornerRadius="90dp"
-            app:cardElevation="0dp"
+            android:onClick="@{()->clickButtonFragment.onClickProfile()}"
+            loadImage="@{imageProfile.imageProfile}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent">
-
-            <ImageView
-                android:id="@+id/IconProfile"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@color/black"
-                android:onClick="@{()->clickButtonFragment.onClickProfile()}"
-                loadImage="@{imageProfile.imageProfile}"
-                tools:src="@tools:sample/avatars" />
-        </androidx.cardview.widget.CardView>
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:shapeAppearance="@style/ShapeAppearanceOverlayRound"
+            tools:src="@tools:sample/avatars"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

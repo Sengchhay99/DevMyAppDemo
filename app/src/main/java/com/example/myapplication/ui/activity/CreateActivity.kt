@@ -43,7 +43,6 @@ class CreateActivity : BaseActivity() {
             adapterImage.submitList(imageList.toList())
             showSuccessMessage(getString(R.string.the_image_is_deleted))
         }
-
     }
 
     private val callBackToolBar = object : CreateActivityCallback {

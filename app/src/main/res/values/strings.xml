@@ -33,4 +33,9 @@
     <string name="in_warranty">In Warranty</string>
     <string name="out_warranty">Out Warranty</string>
     <string name="tax_invoice">Tax-Invoice</string>
+    <string name="login">Login</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="enter_your_new_passcode">Enter your new passcode</string>
+    <string name="confirm_your_passcode">Confirm your passcode"</string>
 </resources>

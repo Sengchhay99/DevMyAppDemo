@@ -3,7 +3,11 @@
     <data>
         <variable
             name="clickBackView"
-            type="com.example.myapplication.ui.activity.ViewAllInvoiceActivity.ClickBackView" />
+            type="com.example.myapplication.ui.viewAllList.ViewAllInvoiceActivity.ClickBackView" />
+
+        <variable
+            name="isRefresh"
+            type="Boolean" />
     </data>
 
 <androidx.constraintlayout.widget.ConstraintLayout
@@ -12,7 +16,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.activity.ViewAllInvoiceActivity">
+    tools:context=".ui.viewAllList.ViewAllInvoiceActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraint1"
@@ -27,6 +31,7 @@
             android:id="@+id/backBtn"
             android:layout_width="30dp"
             android:layout_height="30dp"
+            android:background="?selectableItemBackground"
             android:onClick="@{()->clickBackView.onClickBackView()}"
             app:srcCompat="@drawable/baseline_arrow_back_24"
             app:layout_constraintTop_toTopOf="parent"
@@ -99,6 +104,15 @@
         tools:itemCount="4"
         tools:listitem="@layout/custom_layout_list_invoice" />
 
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:visibleIf="@{isRefresh}"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

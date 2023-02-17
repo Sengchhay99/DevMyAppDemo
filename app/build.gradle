@@ -67,4 +67,12 @@ dependencies {
 
     //graph
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
+    //keyNumber
+    implementation 'com.github.davidmigloz:number-keyboard:3.1.0'
+
+    implementation 'com.github.aabhasr1:OtpView:v1.1.2-ktx'
+
+    //paginate
+    implementation 'com.github.markomilos:paginate:1.0.0'
 }

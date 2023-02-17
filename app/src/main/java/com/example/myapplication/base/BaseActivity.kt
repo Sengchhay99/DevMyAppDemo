@@ -48,6 +48,10 @@ open class BaseActivity : AppCompatActivity() {
             }
     }
 
+    inline fun <reified A : AppCompatActivity> start(extra: Intent.() -> Unit = {}) {
+        startActivity(Intent(this, A::class.java).apply(extra))
+    }
+
     fun showErrorMessage(message: String) {
         Toasty.error(this, message).show()
     }

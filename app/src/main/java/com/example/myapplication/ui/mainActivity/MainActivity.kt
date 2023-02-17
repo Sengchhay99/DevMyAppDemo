@@ -13,7 +13,7 @@ import com.example.myapplication.databinding.ActivityMainBinding
 import com.example.myapplication.databinding.DialogSetProfileBinding
 import com.example.myapplication.model.ProfileModel
 import com.example.myapplication.ui.activity.ActivityFragment
-import com.example.myapplication.ui.activity.ViewAllInvoiceActivity
+import com.example.myapplication.ui.viewAllList.ViewAllInvoiceActivity
 import com.example.myapplication.ui.dashboard.DashboardFragment
 import com.example.myapplication.ui.invoice.InvoiceFragment
 import com.kongzue.dialogx.dialogs.BottomDialog
@@ -51,12 +51,12 @@ class MainActivity : AppCompatActivity() {
 
         override fun onClickProfile() {
             BottomDialog.build()
-                .setCustomView(object : OnBindView<BottomDialog>(R.layout.dialog_set_profile){
+                .setCustomView(object : OnBindView<BottomDialog>(R.layout.dialog_set_profile) {
                     override fun onBind(dialog: BottomDialog?, v: View?) {
                         v ?: return
                         val binding = DialogSetProfileBinding.bind(v)
                         binding.clickActionProfile = callbackProfile(dialog)
-                        val profileData = ProfileModel(1, R.drawable.ic_profile,"Data Type Name")
+                        val profileData = ProfileModel(1, R.drawable.ic_profile, "Data Type Name")
                         binding.imageProfile = profileData
                     }
                 })
@@ -83,7 +83,6 @@ class MainActivity : AppCompatActivity() {
         override fun onClickLogout() {
 
         }
-
     }
 
     private fun replaceFragment(menuItem: MenuItem) {
@@ -124,12 +123,12 @@ class MainActivity : AppCompatActivity() {
         return newFragment
     }
 
-    interface MainEventOrder{
+    interface MainEventOrder {
         fun onClickButtonView()
         fun onClickProfile()
     }
 
-    interface CallBackProfile{
+    interface CallBackProfile {
         fun onClickClose()
         fun onClickPrinter()
         fun onClickChangePassword()

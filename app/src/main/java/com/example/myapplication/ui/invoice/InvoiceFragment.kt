@@ -10,7 +10,7 @@ import com.example.myapplication.callback.OnItemClick
 import com.example.myapplication.databinding.FragmentInvoiceBinding
 import com.example.myapplication.model.PaymentOrderModel
 import com.example.myapplication.model.ProfileModel
-import com.example.myapplication.ui.activity.ViewAllInvoiceActivity
+import com.example.myapplication.ui.viewAllList.ViewAllInvoiceActivity
 import com.example.myapplication.ui.mainActivity.ListOrderAdapter
 
 class InvoiceFragment : Fragment(R.layout.fragment_invoice) {

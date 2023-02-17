@@ -2,7 +2,9 @@ package com.example.myapplication.helper
 
 import android.content.res.ColorStateList
 import android.widget.ImageView
+import android.widget.ProgressBar
 import androidx.core.content.ContextCompat
+import androidx.core.view.isVisible
 import androidx.databinding.BindingAdapter
 import coil.load
 import com.example.myapplication.R
@@ -30,15 +32,29 @@ object Binding {
     @JvmStatic
     fun setColorBackgroundStatus(statusText: ImageView, statusKey: String) {
         statusText.imageTintList =
-            when(statusKey) {
+            when (statusKey) {
                 "pending" ->
-                    ColorStateList.valueOf(ContextCompat.getColor(statusText.context, R.color.yellow))
+                    ColorStateList.valueOf(
+                        ContextCompat.getColor(
+                            statusText.context,
+                            R.color.yellow
+                        )
+                    )
                 "new" ->
-                    ColorStateList.valueOf(ContextCompat.getColor(statusText.context, R.color.color_green))
+                    ColorStateList.valueOf(
+                        ContextCompat.getColor(
+                            statusText.context,
+                            R.color.color_green
+                        )
+                    )
 
                 else -> null
             }
-
     }
 
+    @BindingAdapter("visibleIf")
+    @JvmStatic
+    fun visibleIf(progressBar: ProgressBar, isVisible: Boolean = true) {
+        progressBar.isVisible = isVisible
+    }
 }
